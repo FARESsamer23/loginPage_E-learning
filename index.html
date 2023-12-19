@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <style>
+        *{
+          font-family: 'Poppins', sans-serif;
+        }
+        body{
+         /* background-image: linear-gradient(to right,  rgb(92, 0, 252),rgb(223, 237, 248)); */
+         margin: 0;
+        padding: 0;
+        height: 100%;
+    
+         
+        }
+      
+       video {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+    }
+    
+    .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+     
+    }
+    </style>
+    
+    <video autoplay muted loop>
+      <source src="/pictures/vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <div class="content">
+    
+
+    <div class="container" id="container">
+
+            
+
+        <div class="header">
+            <img src="/pictures/logo.png" alt="" style="width:100px; color: aqua;border-radius: 50%;
+            border: solid 3px white; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.094);">
+             <span class="span1"> Ministère de l'enseignement supérieur et de la recherche scientifique
+            </span>
+             <span class=" span2">
+                وزارة التعليم العالي و البحث العلمي 
+              </span>
+               <span class="span3"> l'Université de Blida1</span>
+               <span class="span4">
+                USDB 1– Faculté des Sciences Département  <span> d’informatique</span> 
+                </span>
+                <img src="/pictures/pic1.png" alt="" class="img2" style="width:400px">
+                <div class="first-div">
+                    <h2 style="font-weight: 600 ; 
+                    line-height:1;
+                    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+                    text-transform: capitalize;
+                    ">Connectez vous à votre compte E-Learning</h2>
+                    <span style="font-weight: 500;
+                    font-size: 14px;">Afin d’accéder à vos cours en ligne, connectez vous à votre compte elearning Moodle avec votre username et mot de passe
+                       Connexion</span>
+                      
+             </div>
+            </div>
+
+        <!-- first form -->
+        <div class="form-container sign-up">
+   <form  method="post">
+    <h1>Créer Votre Compte</h1>
+    <div class="social-icons">
+        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <span></span>
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <div style="width: 100%;">
+        <label for="Etudiant" >Etudiant</label>
+        <input type="radio"  name="type" class="radioEtudiant" value="etudiant">
+        <label for="Etudiant"">Enseignant</label>
+        <input type="radio"  name="type" class="radioEnseignant" value="enseignant">
+        <div class="div-info-ETD">
+            <input type="text" placeholder="Le numéro de la carte">
+            <div  style="display: flex;
+            justify-content: left;
+            margin-left: 5px;
+            background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    color: #4b4b4bc7;
+            ">
+                <label for="Année">Année Universitaire :</label>
+                <select name="Année" id="Année" style=" background-color: #eee;
+                border: none;
+                font-size: 13px;
+                border-radius: 8px;
+                color: #4b4b4bc7;
+                outline: none;">
+                    <option value="1">L1</option>
+                    <option value="2">L2</option>
+                    <option value="3">L3 Isil</option>
+                    <option value="4">L3 Siq</option>
+                </select>
+            </div>
+          
+
+        </div>  
+    
+    <div class="div-info-ENS">
+    <input type="text" placeholder="Domaine">
+    <input type="text" placeholder="Grade">
+    </div>
+    </div>
+    <input type="password" placeholder=" Votre Password ">
+    <input type="password" placeholder="  Confirmer Votre Password ">
+    
+
+    <button>Inscription</button>
+</form>
+</div>
+ <style>
+    .div-info-ENS{
+        display: none;
+    }
+    .div-info-ENS-on{
+        display: block;
+    }
+
+ </style>
+<script>
+    // Correction du script
+    let radioEtudiant = document.querySelector(".radioEtudiant");
+    let radioEnseignant = document.querySelector(".radioEnseignant");
+    let divInfoEns = document.querySelector(".div-info-ENS");
+     let divinfoETD = document.querySelector(".div-info-ETD");
+    // Assurez-vous de ne pas utiliser des guillemets autour de true
+    radioEtudiant.checked = true;
+
+    // Utilisez l'événement onclick pour détecter le clic sur le bouton radio
+    
+    //changment a enseignat
+    radioEnseignant.onclick = () => {
+        if (radioEnseignant.checked) {
+            divInfoEns.classList.add("div-info-ENS-on");
+            divinfoETD.style.display = "none"
+        }
+    };
+   
+    //changment a etudiant
+    radioEtudiant.onclick = () => {
+        if (radioEtudiant.checked) {
+            divinfoETD.style.display = "block"
+            divInfoEns.classList.remove("div-info-ENS-on");  
+        } 
+    };
+
+
+        // Fonction de validation du formulaire
+        function validateForm() {
+        // Récupérer les valeurs des champs
+        let name = document.querySelector('input[placeholder="Name"]').value;
+        let email = document.querySelector('input[placeholder="Email"]').value;
+        let password = document.querySelector('input[placeholder=" Votre Password "]').value;
+        let confirmPassword = document.querySelector('input[placeholder="  Confirmer Votre Password "]').value;
+        let matricule = document.querySelector('.matriculeEtd').value;
+
+        // Expression régulière pour l'e-mail
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Expression régulière pour le nom (au moins un caractère alphabétique)
+        let nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
+
+        // Expression régulière pour le numéro de carte à 12 chiffres
+        let matriculeRegex = /^\d{12}$/;
+        
+        // Expression régulière pour le mot de passe (au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial)
+        let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        
+
+        // Effectuer la validation
+        if (!nameRegex.test(name)) {
+            alert("Veuillez entrer un nom valide.");
+            return false;
+        }
+
+        if (!emailRegex.test(email)) {
+            alert("Veuillez entrer une adresse e-mail valide.");
+            return false;
+        }
+        if (document.querySelector('.matriculeEtd').style.display !== "none" && !matriculeRegex.test(matricule)) {
+            alert("Veuillez entrer un numéro de carte valide (12 chiffres).");
+            return false;
+        }
+
+        if (!passwordRegex.test(password)) {
+            alert("Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.");
+            return false;
+        }
+       
+
+        if (password !== confirmPassword) {
+            alert("Les mots de passe ne correspondent pas.");
+            return false;
+        }
+
+       
+
+        // Si tout est valide, le formulaire est soumis
+        alert("Formulaire soumis avec succès!");
+        return true;
+    }
+
+    // Attacher la fonction de validation au formulaire
+    document.querySelector('form').onsubmit = validateForm;
+</script>
+            </div>
+    
+        </div>
+</body>
+
+</html>
